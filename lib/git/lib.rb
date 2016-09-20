@@ -344,6 +344,7 @@ module Git
 
     def diff_full(obj1 = 'HEAD', obj2 = nil, opts = {})
       diff_opts = ['-p']
+      diff_opts << "--diff-filter=ADM"
       diff_opts << obj1
       diff_opts << obj2 if obj2.is_a?(String)
       diff_opts << '--' << opts[:path_limiter] if opts[:path_limiter].is_a? String
@@ -353,6 +354,7 @@ module Git
 
     def diff_stats(obj1 = 'HEAD', obj2 = nil, opts = {})
       diff_opts = ['--numstat']
+      diff_opts << "--diff-filter=ADM"
       diff_opts << obj1
       diff_opts << obj2 if obj2.is_a?(String)
       diff_opts << '--' << opts[:path_limiter] if opts[:path_limiter].is_a? String
@@ -972,6 +974,7 @@ module Git
 
       arr_opts << "-#{opts[:count]}" if opts[:count]
       arr_opts << "--no-color"
+      arr_opts << "--diff-filter=ADM"
       arr_opts << "--since=#{opts[:since]}" if opts[:since].is_a? String
       arr_opts << "--until=#{opts[:until]}" if opts[:until].is_a? String
       arr_opts << "--grep=#{opts[:grep]}" if opts[:grep].is_a? String
