@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
   s.authors = ['Scott Chacon']
-  s.date = '2016-02-25'
+  s.date = '2016-09-21'
   s.email = 'schacon@gmail.com'
   s.homepage = 'http://github.com/schacon/ruby-git'
   s.license = 'MIT'
   s.name = 'ruby-git-fw'
   s.summary = 'Ruby/Git is a Ruby library that can be used to create, read and manipulate Git repositories by wrapping system calls to the git binary.'
-  s.version = '1.3.1'
+  s.version = '1.3.2'
 
   s.require_paths = ['lib']
   s.required_ruby_version = '>= 1.9'
